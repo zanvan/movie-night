@@ -47,7 +47,6 @@ function App() {
     const renderSelectedGenre = () => {
         return (
             <>
-                <Button color="secondary" onClick={() => handleSelect(null)}>All</Button>
                 <MovieList key={selectedGenre} 
                     genre={selectedGenre} 
                     handleSelect={handleSelect} 
@@ -60,7 +59,7 @@ function App() {
     return (
         <ThemeProvider theme={theme}>
             <div className={classes.app}>
-                <TopNav />
+                <TopNav showAllGenres={Boolean(selectedGenre)} handleShowAllGenres={() => handleSelect(null)} />
 
                 <main className={classes.main}>
                     {selectedGenre 
