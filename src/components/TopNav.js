@@ -22,7 +22,11 @@ TopNav.propTypes = {
     showAllGenres: PropTypes.bool,
 }
 
-export default function TopNav({ showAllGenres, handleShowAllGenres }) {
+export default function TopNav({ 
+    showAllGenres, 
+    handleShowAllGenres,
+    loginButton = () => {},
+}) {
     const classes = useStyles();
     
     return (
@@ -38,6 +42,7 @@ export default function TopNav({ showAllGenres, handleShowAllGenres }) {
                             </Button>) 
                         : ''}
                     <Typography className={classes.title} variant="h4">Movie Night</Typography>
+                    {loginButton()}
                 </Toolbar>
             </AppBar>
         </div>

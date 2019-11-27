@@ -42,8 +42,6 @@ const MovieList = ({
     const classes = useStyles();
 
     useEffect(() => {
-        console.log('aaa', genre);
-
         const controller = new AbortController();
         const signal = controller.signal;
         async function getMovies() {
@@ -58,8 +56,6 @@ const MovieList = ({
         getMovies();
 
         return () => {
-            console.log('clear', genre);
-
             controller.abort();
         }
     }, [genre, page])
