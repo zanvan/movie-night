@@ -33,18 +33,16 @@ const Login = ({ isLoggedIn = false, handleLogin, loggedinUser = {} }) => {
     };
 
     const handleLogout = () => {
-        handleLogin(false);
+        handleLogin({});
         setAnchorEl(null);
     };
 
     const showLoginDialog = () => {
-        console.log(openDialog);
-        
         setOpenDialog(true);
     };
 
     const checkLoginData = () => {
-        handleLogin(Boolean(email && password));
+        handleLogin({email, password});
         handleCloseDialog();
     };
 
@@ -63,6 +61,7 @@ const Login = ({ isLoggedIn = false, handleLogin, loggedinUser = {} }) => {
                         open={Boolean(anchorEl)}
                         onClose={() => setAnchorEl(null)}
                     >
+                        <MenuItem>{loggedinUser && loggedinUser.name}</MenuItem>
                         <MenuItem onClick={handleLogout}>Logout</MenuItem>
                     </Menu>
                 </>

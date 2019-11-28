@@ -9,3 +9,5 @@ export const genres = {
     comedy: {id: 35, name: 'Comedy'},
     drama: {id: 18, name: 'Drama'},
 }
+
+export const usersStorageKey = 'MOVIE_NIGHT_USERS';
