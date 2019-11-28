@@ -21,12 +21,13 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles({
     app: {
-        textAlign: 'center'
+        height: '100vh'
     },
     main: {
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center'
+        alignItems: 'center',
+        overflow: 'auto',
     }
 });
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -14,13 +14,13 @@ const useStyles = makeStyles(theme => ({
     title: {
         flex: 2,
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'center'
     },
     login: {
-        flex: '1 0 auto',
+        flex: '1 0 auto'
     },
     signup: {
-        flex: '1 0 auto',
+        flex: '1 0 auto'
     }
 }));
 
@@ -29,38 +29,42 @@ TopNav.propTypes = {
     showAllGenres: PropTypes.bool,
     signupButton: PropTypes.func,
     loginButton: PropTypes.func,
-    handleShowAllGenres: PropTypes.func,
-}
+    handleShowAllGenres: PropTypes.func
+};
 
 export default function TopNav({
-    showAllGenres, 
+    showAllGenres,
     handleShowAllGenres,
     signupButton = () => {},
-    loginButton = () => {},
+    loginButton = () => {}
 }) {
     const classes = useStyles();
-    
+
     return (
         <div className={classes.root}>
-            <AppBar position="static" >
-                <Toolbar>
-                    {showAllGenres 
-                        ? (<Button 
-                                size="small" 
+            <>
+                <AppBar position="fixed">
+                    <Toolbar>
+                        {showAllGenres ? (
+                            <Button
+                                size="small"
                                 color="secondary"
-                                onClick={handleShowAllGenres}>
-                                    All Genres
-                            </Button>) 
-                        : ''}
-                    <Typography className={classes.title} variant="h4">Movie Night</Typography>
-                    <span className="signup">
-                        {signupButton()}
-                    </span>
-                    <span className="login">
-                        {loginButton()}
-                    </span>
-                </Toolbar>
-            </AppBar>
+                                onClick={handleShowAllGenres}
+                            >
+                                All Genres
+                            </Button>
+                        ) : (
+                            ''
+                        )}
+                        <Typography className={classes.title} variant="h4">
+                            Movie Night
+                        </Typography>
+                        <span className="signup">{signupButton()}</span>
+                        <span className="login">{loginButton()}</span>
+                    </Toolbar>
+                </AppBar>
+                <Toolbar />
+            </>
         </div>
     );
 }
