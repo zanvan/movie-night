@@ -48,5 +48,3 @@ or
 ```
 yarn start
 ```
-
-I will try to host it live with next will send in email the link.
