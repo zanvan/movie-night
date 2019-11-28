@@ -48,3 +48,5 @@ or
 ```
 yarn start
 ```
+
+Hosted at: https://movie-night-flax-xi.now.sh/
